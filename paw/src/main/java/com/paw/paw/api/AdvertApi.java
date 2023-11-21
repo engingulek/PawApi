@@ -2,6 +2,7 @@ package com.paw.paw.api;
 
 import com.paw.paw.business.abstracts.AdvertService;
 import com.paw.paw.core.DataResult;
+import com.paw.paw.entities.dtos.AdvertDetailDto;
 import com.paw.paw.entities.dtos.AdvertForAdvertListDto;
 import jakarta.servlet.http.PushBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,11 @@ public class AdvertApi {
     @GetMapping("/getAdvertFilterByCategory")
     public DataResult<List<AdvertForAdvertListDto>>  getAdvertFilterByCategory(@RequestParam("categoryId") int categoryId) {
         return  this.advertService.getAdvertFilterByCategory(categoryId);
+    }
+
+    @GetMapping("/getAdvertDetail")
+   public DataResult<List<AdvertDetailDto>> getAdvertDetail(@RequestParam("id") int id){
+        return  this.advertService.getAdvertDetail(id);
     }
 }
 

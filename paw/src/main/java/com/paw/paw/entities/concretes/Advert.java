@@ -48,8 +48,8 @@ public class Advert {
     @Column(name = "about")
     private String about;
 
-    @Column(name = "userId")
-    private int userId;
+    @Column(name = "userid")
+    private int userid;
 
 
 
