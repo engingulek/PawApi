@@ -14,7 +14,7 @@ public class AdvertForAdvertListDto {
 
     private  int id;
 
-    private List<String> baseImages;
+    private List<String> images;
     private String name;
     private String gender;
 

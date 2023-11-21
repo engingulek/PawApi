@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface AdvertService {
     DataResult<List<AdvertForAdvertListDto>> getAdvertList();
+    DataResult<List<AdvertForAdvertListDto>> getAdvertFilterByCategory(int categoryId);
 }
