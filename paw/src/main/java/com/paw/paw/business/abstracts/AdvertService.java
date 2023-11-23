@@ -10,5 +10,5 @@ public interface AdvertService {
     DataResult<List<AdvertForAdvertListDto>> getAdvertList();
     DataResult<List<AdvertForAdvertListDto>> getAdvertFilterByCategory(int categoryId);
 
-    public DataResult<List<AdvertDetailDto>> getAdvertDetail(int id);
+    public DataResult<AdvertDetailDto> getAdvertDetail(int id);
 }

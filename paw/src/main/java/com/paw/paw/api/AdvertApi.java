@@ -35,7 +35,7 @@ public class AdvertApi {
     }
 
     @GetMapping("/getAdvertDetail")
-   public DataResult<List<AdvertDetailDto>> getAdvertDetail(@RequestParam("id") int id){
+   public DataResult<AdvertDetailDto> getAdvertDetail(@RequestParam("id") int id){
         return  this.advertService.getAdvertDetail(id);
     }
 }
