@@ -17,5 +17,5 @@ public interface AdvertDao extends JpaRepository<Advert,Integer> {
     List<AdvertForAdvertListDto> getAdvertFilterByCategory(int categoryId);
 
     @Query(value = "Select new com.paw.paw.entities.dtos.AdvertDetailDto(ad.id,ad.images,ad.name,ad.gender,ad.genus,ca.category,ad.age,ad.city,ad.district,ad.about,u.id,u.name,u.surname) From Advert as ad inner join Category as ca on ca.id = ad.categoryid inner join User as u on u.id = ad.userid where ad.id =:id")
-    List<AdvertDetailDto> getAdvertDetail(int id);
+    AdvertDetailDto getAdvertDetail(int id);
 }
