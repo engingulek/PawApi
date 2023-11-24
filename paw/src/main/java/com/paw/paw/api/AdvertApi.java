@@ -38,6 +38,10 @@ public class AdvertApi {
    public DataResult<AdvertDetailDto> getAdvertDetail(@RequestParam("id") int id){
         return  this.advertService.getAdvertDetail(id);
     }
+    @GetMapping("/getAdvertFilterBySearchText")
+     public DataResult<List<AdvertForAdvertListDto>> getAdvertFilterBySearchText(@RequestParam("searchText") String searchText){
+        return this.advertService.getAdvertFilterBySearchText(searchText);
+     }
 }
 
 

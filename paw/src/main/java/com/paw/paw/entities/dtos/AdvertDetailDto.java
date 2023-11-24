@@ -32,6 +32,8 @@ public class AdvertDetailDto {
 
     private int  userId;
 
+    private String userImage;
+
     private  String userName;
 
     private  String userSurname;
