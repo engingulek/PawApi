@@ -38,4 +38,8 @@ public class AdvertManager implements AdvertService {
     public DataResult<List<AdvertForAdvertListDto>> getAdvertFilterBySearchText(String searchText){
        return new SuccessDataResult<List<AdvertForAdvertListDto>>(this.advertDao.getAdvertFilterBySearchText(searchText),"Data Listed");
     }
+
+    public DataResult<List<AdvertForAdvertListDto>> getAdvertFilterByCategoryAndSearchText(int categoryId,String searchText){
+        return new SuccessDataResult<List<AdvertForAdvertListDto>>(this.advertDao.getAdvertFilterByCategoryAndSearchText(categoryId, searchText),"Data Listed");
+    }
 }

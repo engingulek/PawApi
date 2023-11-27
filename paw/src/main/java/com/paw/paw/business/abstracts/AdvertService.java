@@ -12,5 +12,6 @@ public interface AdvertService {
 
     public DataResult<AdvertDetailDto> getAdvertDetail(int id);
     DataResult<List<AdvertForAdvertListDto>> getAdvertFilterBySearchText(String searchText);
+    DataResult<List<AdvertForAdvertListDto>> getAdvertFilterByCategoryAndSearchText(int categoryId,String searchText);
 
 }

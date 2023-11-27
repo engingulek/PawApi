@@ -42,6 +42,11 @@ public class AdvertApi {
      public DataResult<List<AdvertForAdvertListDto>> getAdvertFilterBySearchText(@RequestParam("searchText") String searchText){
         return this.advertService.getAdvertFilterBySearchText(searchText);
      }
+
+    @GetMapping("/getAdvertFilterByCategoryIdAndSearchText")
+     public DataResult<List<AdvertForAdvertListDto>> getAdvertFilterByCategoryAndSearchText(@RequestParam("categoryId") int categoryId,@RequestParam("searchText") String searchText){
+        return this.advertService.getAdvertFilterByCategoryAndSearchText(categoryId, searchText);
+     }
 }
 
 
