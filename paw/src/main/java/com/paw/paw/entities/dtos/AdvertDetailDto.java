@@ -37,4 +37,6 @@ public class AdvertDetailDto {
     private  String userName;
 
     private  String userSurname;
+
+    private Boolean favStatus;
 }
