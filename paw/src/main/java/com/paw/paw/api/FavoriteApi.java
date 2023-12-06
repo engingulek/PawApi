@@ -11,8 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.paw.paw.business.abstracts.FavoriteService;
 import com.paw.paw.core.DataResult;
 import com.paw.paw.core.Result;
+import com.paw.paw.entities.concretes.Favorite;
 import com.paw.paw.entities.dtos.FavoriteForFavListDto;
 import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.validation.annotation.Validated;
+
 
 @RestController
 @RequestMapping("api/favorites")
@@ -39,5 +44,8 @@ public class FavoriteApi {
     return this.favoriteService.deleteFavAdvertByAdvertidAndUserid(advertid, userid);
   }
 
-
+  @PostMapping("/add")
+  public Result addAdvertToFavList(@RequestBody @Validated Favorite favorite){
+    return this.favoriteService.addAdvertToFavList(favorite);
+  }
 }

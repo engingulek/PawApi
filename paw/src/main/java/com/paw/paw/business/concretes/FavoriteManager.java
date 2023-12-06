@@ -2,6 +2,7 @@ package com.paw.paw.business.concretes;
 
 import com.paw.paw.business.abstracts.FavoriteService;
 import com.paw.paw.dataAccess.FavoriteDao;
+import com.paw.paw.entities.concretes.Favorite;
 import com.paw.paw.entities.dtos.FavoriteForFavListDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,12 @@ public class FavoriteManager implements FavoriteService  {
         this.favoriteDao.deleteFavAdvertAdvertidAndUserid(advertId, userid);
        // this.favoriteDao.deleteFavAdvertFromFavList(advertId, userid);
          return new Result(true, "Data Deleted");
+    }
+
+    @Override
+    public Result addAdvertToFavList(Favorite favorite) {
+        this.favoriteDao.save(favorite);
+        return new Result(true, "Add");
     }
 
 
