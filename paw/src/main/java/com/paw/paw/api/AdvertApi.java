@@ -2,16 +2,22 @@ package com.paw.paw.api;
 
 import com.paw.paw.business.abstracts.AdvertService;
 import com.paw.paw.core.DataResult;
+import com.paw.paw.core.Result;
+import com.paw.paw.entities.concretes.Advert;
 import com.paw.paw.entities.dtos.AdvertDetailDto;
 import com.paw.paw.entities.dtos.AdvertForAdvertListDto;
 import jakarta.servlet.http.PushBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("api/adverts")
@@ -47,6 +53,12 @@ public class AdvertApi {
      public DataResult<List<AdvertForAdvertListDto>> getAdvertFilterByCategoryAndSearchText(@RequestParam("categoryId") int categoryId,@RequestParam("searchText") String searchText){
         return this.advertService.getAdvertFilterByCategoryAndSearchText(categoryId, searchText);
      }
+
+     @PostMapping("/add")
+     public Result addAdvertToAdvertList(@RequestBody @Validated Advert advert){
+        return this.advertService.addAdvertToAdvertList(advert);
+     }
+     
 }
 
 

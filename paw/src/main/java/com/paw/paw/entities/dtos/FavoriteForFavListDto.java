@@ -14,7 +14,7 @@ public class FavoriteForFavListDto {
           
     private int id;
     private int advertId;
-    private List<String> images;
+    private byte[] images;
     private String name;
     private String gender;
 
@@ -25,6 +25,4 @@ public class FavoriteForFavListDto {
     private  int age;
 
     private  String city;
-
-    private String district;
 }

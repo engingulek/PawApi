@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+
 @Data
 @Entity
 @Table(name = "adverts")
@@ -20,7 +22,7 @@ public class Advert {
     private  int id;
 
     @Column(name = "images")
-    private List<String> images;
+    private byte[] images;
 
     @Column(name = "name")
     private String name;

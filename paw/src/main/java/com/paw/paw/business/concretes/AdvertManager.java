@@ -2,8 +2,10 @@ package com.paw.paw.business.concretes;
 
 import com.paw.paw.business.abstracts.AdvertService;
 import com.paw.paw.core.DataResult;
+import com.paw.paw.core.Result;
 import com.paw.paw.core.SuccessDataResult;
 import com.paw.paw.dataAccess.AdvertDao;
+import com.paw.paw.entities.concretes.Advert;
 import com.paw.paw.entities.dtos.AdvertDetailDto;
 import com.paw.paw.entities.dtos.AdvertForAdvertListDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +43,10 @@ public class AdvertManager implements AdvertService {
 
     public DataResult<List<AdvertForAdvertListDto>> getAdvertFilterByCategoryAndSearchText(int categoryId,String searchText){
         return new SuccessDataResult<List<AdvertForAdvertListDto>>(this.advertDao.getAdvertFilterByCategoryAndSearchText(categoryId, searchText),"Data Listed");
+    }
+
+    public Result addAdvertToAdvertList(Advert advert){
+        this.advertDao.save(advert);
+         return new Result(true, "Add");
     }
 }
