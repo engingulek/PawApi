@@ -18,6 +18,6 @@ public interface AdvertService {
     DataResult<List<AdvertForAdvertListDto>> getAdvertFilterByCategoryAndSearchText(int categoryId,String searchText);
     Result addAdvertToAdvertList(Advert advert);
     DataResult<List<AdvertForAdvertListDto>> getAdvertListByUserId(int userId);
-    
+    Result deleteAdvertFromAdvert(int id,int userid);
 
 }

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 
 @RestController
@@ -62,6 +63,11 @@ public class AdvertApi {
      @GetMapping("/getAdvertListByUserId")
      public DataResult<List<AdvertForAdvertListDto>> getAdvertListByUserId(@RequestParam("userId") int userId){
         return this.advertService.getAdvertListByUserId(userId);
+     }
+
+     @DeleteMapping("/deleteAdvert")
+     public Result deleteAdvertFromAdvertList(@RequestParam("id") int id,@RequestParam("userid") int userid){
+        return this.advertService.deleteAdvertFromAdvert(id, userid);
      }
     
      

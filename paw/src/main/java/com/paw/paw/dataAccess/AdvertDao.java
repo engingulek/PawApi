@@ -3,7 +3,11 @@ package com.paw.paw.dataAccess;
 import com.paw.paw.entities.concretes.Advert;
 import com.paw.paw.entities.dtos.AdvertDetailDto;
 import com.paw.paw.entities.dtos.AdvertForAdvertListDto;
+
+import org.springframework.transaction.annotation.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -27,4 +31,9 @@ public interface AdvertDao extends JpaRepository<Advert,Integer> {
 
      @Query(value = "Select new com.paw.paw.entities.dtos.AdvertForAdvertListDto(ad.id,ad.images,ad.name,ad.gender,ad.genus,ca.category,ad.age,ad.city) From Advert as ad inner join Category as ca on ca.id = ad.categoryid where userid =:userId")
       List<AdvertForAdvertListDto> getAdvertListByUserId(int userId);
+
+      @Modifying
+      @Transactional
+      @Query("delete from Advert as ad where id=:id and userid=:userid")
+      void deleteAdvertFromAdvert(int id,int userid);
 }
