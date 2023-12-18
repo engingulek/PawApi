@@ -28,6 +28,11 @@ public class AdvertManager implements AdvertService {
     public DataResult<List<AdvertForAdvertListDto>> getAdvertList() {
         return new  SuccessDataResult<List<AdvertForAdvertListDto>>(this.advertDao.getAdvertList(),"Data Listed");
     }
+//SuccessDataResult<List<AdvertForAdvertListDto>>(this.advertDao.getAdvertListByUserId(userId));
+    public DataResult<List<AdvertForAdvertListDto>> getAdvertListByUserId(int userId) {
+        return new  SuccessDataResult<List<AdvertForAdvertListDto>>(this.advertDao.getAdvertListByUserId(userId),"Data Listed");
+       
+    }
 
     public DataResult<List<AdvertForAdvertListDto>> getAdvertFilterByCategory(int categoryId){
         return new SuccessDataResult<List<AdvertForAdvertListDto>>(this.advertDao.getAdvertFilterByCategory(categoryId),"Data Listed");
@@ -49,4 +54,8 @@ public class AdvertManager implements AdvertService {
         this.advertDao.save(advert);
          return new Result(true, "Add");
     }
+
+  
+  
+
 }

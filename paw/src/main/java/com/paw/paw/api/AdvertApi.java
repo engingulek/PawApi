@@ -58,6 +58,13 @@ public class AdvertApi {
      public Result addAdvertToAdvertList(@RequestBody @Validated Advert advert){
         return this.advertService.addAdvertToAdvertList(advert);
      }
+
+     @GetMapping("/getAdvertListByUserId")
+     public DataResult<List<AdvertForAdvertListDto>> getAdvertListByUserId(@RequestParam("userId") int userId){
+        return this.advertService.getAdvertListByUserId(userId);
+     }
+    
+     
      
 }
 

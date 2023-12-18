@@ -6,7 +6,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Types;
 import java.util.List;
+
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.annotations.JdbcTypeCode;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 
@@ -22,7 +26,7 @@ public class Advert {
     private  int id;
 
     @Column(name = "images")
-    private byte[] images;
+    private  List<String> images;
 
     @Column(name = "name")
     private String name;
@@ -36,16 +40,11 @@ public class Advert {
     @Column(name = "age")
     private int age;
 
-
-
     @Column(name = "gender")
     private String gender;
 
     @Column(name = "city")
     private String city;
-
-    @Column(name = "district")
-    private String district;
 
     @Column(name = "about")
     private String about;

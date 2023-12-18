@@ -14,7 +14,7 @@ public class FavoriteForFavListDto {
           
     private int id;
     private int advertId;
-    private byte[] images;
+    private List<String> images;
     private String name;
     private String gender;
 

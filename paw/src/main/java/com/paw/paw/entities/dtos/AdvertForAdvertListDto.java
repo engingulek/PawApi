@@ -14,7 +14,7 @@ public class AdvertForAdvertListDto {
 
     private  int id;
 
-    private List<String> images;
+    private  List<String> images;
     private String name;
     private String gender;
 
@@ -26,6 +26,5 @@ public class AdvertForAdvertListDto {
 
     private  String city;
 
-    private String district;
 
 }
