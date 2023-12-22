@@ -7,34 +7,38 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 
+import lombok.*;
+
+@Getter
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class AdvertDetailDto {
 
-    private  int id;
 
-    private  List<String> images;
-    private String name;
-    private String gender;
+    public  int id;
 
-    private String genus;
+   public  List<String>  images;
+   public  String name;
+   public  String gender;
 
-    private String category;
+   public  String genus;
 
-    private  int age;
+   public  String category;
 
-    private  String city;
+  public    int age;
 
-    private  String about;
+   public   String city;
 
-    private int  userId;
+   public   String about;
 
-    private String userImage;
+  public   int  userId;
 
-    private  String userName;
+  public   String userImage;
 
-    private  String userSurname;
+ public     String userName;
 
-    private Boolean favStatus;
+   public   String userSurname;
+
+public Boolean favStatus;
 }

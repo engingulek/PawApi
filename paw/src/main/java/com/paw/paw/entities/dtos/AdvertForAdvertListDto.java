@@ -1,30 +1,27 @@
 package com.paw.paw.entities.dtos;
-
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Data
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class AdvertForAdvertListDto {
 
-    private  int id;
+  public   int id;
 
-    private  List<String> images;
-    private String name;
-    private String gender;
+  public  List<String>  images;
+  public  String name;
+  public  String gender;
 
-    private String genus;
+  public   String genus;
 
-    private String category;
+  public String category;
 
-    private  int age;
+  public int age;
 
-    private  String city;
+  public  String city;
 
 
 }

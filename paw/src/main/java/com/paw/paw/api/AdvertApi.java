@@ -6,7 +6,7 @@ import com.paw.paw.core.Result;
 import com.paw.paw.entities.concretes.Advert;
 import com.paw.paw.entities.dtos.AdvertDetailDto;
 import com.paw.paw.entities.dtos.AdvertForAdvertListDto;
-import jakarta.servlet.http.PushBuilder;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -69,9 +69,6 @@ public class AdvertApi {
      public Result deleteAdvertFromAdvertList(@RequestParam("id") int id,@RequestParam("userid") int userid){
         return this.advertService.deleteAdvertFromAdvert(id, userid);
      }
-    
-     
-     
 }
 
 
